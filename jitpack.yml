@@ -7,6 +7,6 @@ before_install:
   -
 build:
   android:
-    module: "RequestResult" .
+    module: "RequestResult"
   tasks:
     - assembleRelease
