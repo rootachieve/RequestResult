@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "RequestResult"
 include(":app")
- 
+include(":requestResult")
