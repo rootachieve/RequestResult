@@ -1,6 +1,7 @@
-    plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+plugins {
+    id ("com.android.library")
+    id ("org.jetbrains.kotlin.android")
+    id ("maven-publish")
 }
 
 android {
@@ -41,5 +42,17 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release"
+            create<MavenPublication>("release") {
+                from(components["release"])
 
-group = "com.github.rootachieve"
+                groupId = "com.github.rootachieve"
+                artifactId = "RequestResult"
+                version = "0.1.0"
+            }
+        }
+    }
+}
