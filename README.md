@@ -56,7 +56,7 @@ dataState.onSuccess { data ->
 }
 
 //--- Progress
-Colulm {
+Column {
   //...
   if(dataState.isProgress){
     ProgressScreen()
